@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block content %}
+<div class="container" style="text-align: center">
+<h1 class="display-2">CCC Solution</h1>
+
+<div class="div1" style="margin: 15px; text-align: center;">
+  <form action="/", method='POST'>
+      {% csrf_token %}
+  <input type="text" class="form-control" style="display: inline-block; width: 40%;" placeholder="AMZN, AAPL, GOOG, ......" name="search" id="search-tab"/>
+  <input type="submit" class="btn btn-success" value="Search" id="search-btn">
+  </form>
+</div>
+
+<div class="card text-center">
+  <div class="card-header">
+    <h2>{{ name }}</h2>
+    <span class="card-title" style="margin-left: 10px; margin-right: 10px;">Industry: {{ industry }}</span class="card-title" style="margin-left: 10px; margin-right: 10px;"> <span class="card-title" style="margin-left: 10px; margin-right: 10px;">Sector: {{ sector }}</span> <span>Exchange: {{ exchange }}</span>
+  </div>
+
+  <div style="display: flex;">
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ high.0 }}</h5>
+    <p class="card-text">High</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ low.0 }}</h5>
+    <p class="card-text">Low</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ close.0 }}</h5>
+    <p class="card-text">Close</p>
+  </div>
+  
+</div>
+<div style="display: flex;">
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ cap }}</h5>
+    <p class="card-text">Market Capitalization</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ p_e }}</h5>
+    <p class="card-text">Stock P/E</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ bookVal }}</h5>
+    <p class="card-text">Book Value</p>
+  </div>
+  
+</div>
+
+<div style="display: flex;">
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ roe }}</h5>
+    <p class="card-text">ROE</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ roce }}</h5>
+    <p class="card-text">ROCE</p>
+  </div>
+
+  <div class="card-body" style="display: inline block;">
+    <h5 class="card-title">{{ bookVal }}</h5>
+    <p class="card-text">Book Value</p>
+  </div>
+  
+</div>
+</div>
+
+
+</div>
+{% endblock %}
